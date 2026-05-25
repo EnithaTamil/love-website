@@ -1,0 +1,1482 @@
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  padding:20px 60px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  background:rgba(0,0,0,0.6);
+
+  backdrop-filter:blur(15px);
+
+  z-index:9999;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+
+  color:#ff80ab;
+
+  font-size:2rem;
+
+  font-weight:bold;
+}
+
+.navbar ul{
+
+  display:flex;
+
+  gap:30px;
+
+  list-style:none;
+}
+
+.navbar a{
+
+  text-decoration:none;
+
+  color:white;
+
+  transition:0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+
+  color:#ff80ab;
+
+  border-bottom:2px solid #ff80ab;
+
+  padding-bottom:5px;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-hearts span{
+
+  position:fixed;
+
+  bottom:-100px;
+
+  font-size:2rem;
+
+  animation:
+  floatHearts 10s linear infinite;
+
+  opacity:0.5;
+
+  z-index:1;
+}
+
+.floating-hearts span:nth-child(1){
+  left:10%;
+}
+
+.floating-hearts span:nth-child(2){
+  left:30%;
+  animation-delay:2s;
+}
+
+.floating-hearts span:nth-child(3){
+  left:50%;
+  animation-delay:4s;
+}
+
+.floating-hearts span:nth-child(4){
+  left:70%;
+  animation-delay:6s;
+}
+
+.floating-hearts span:nth-child(5){
+  left:90%;
+  animation-delay:8s;
+}
+
+@keyframes floatHearts{
+
+  0%{
+    transform:translateY(0);
+    opacity:0;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-120vh);
+    opacity:0;
+  }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.8)
+  ),
+  url('images/homebg.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:140px 20px;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card{
+
+  max-width:900px;
+
+  background:
+  rgba(0,0,0,0.45);
+
+  backdrop-filter:blur(15px);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  border-radius:40px;
+
+  padding:60px;
+
+  z-index:10;
+}
+
+.hero-title{
+
+  font-size:5rem;
+
+  color:#ff80ab;
+
+  margin-bottom:30px;
+
+  line-height:1.2;
+
+  text-shadow:
+  0 0 15px rgba(255,105,180,0.6);
+}
+
+.hero-description{
+
+  font-size:1.2rem;
+
+  line-height:2;
+
+  color:#f5f5f5;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+
+  margin-top:40px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+.main-btn,
+.love-btn{
+
+  padding:18px 40px;
+
+  border:none;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-size:1rem;
+
+  transition:0.3s;
+}
+
+.main-btn{
+
+  background:#ff4f81;
+
+  color:white;
+}
+
+.love-btn{
+
+  background:white;
+
+  color:#ff4f81;
+}
+
+.main-btn:hover,
+.love-btn:hover{
+
+  transform:scale(1.05);
+
+  box-shadow:
+  0 0 20px #ff4f81;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-website{
+
+  padding:120px 20px;
+
+  background:#111;
+
+  text-align:center;
+}
+
+.about-container{
+
+  max-width:900px;
+
+  margin:auto;
+}
+
+.about-website h2{
+
+  font-size:3rem;
+
+  color:#ff80ab;
+
+  margin-bottom:30px;
+}
+
+.about-website p{
+
+  line-height:2;
+
+  font-size:1.2rem;
+
+  margin-bottom:20px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.website-features{
+
+  padding:120px 20px;
+
+  background:black;
+
+  text-align:center;
+}
+
+.website-features h2{
+
+  font-size:3rem;
+
+  color:#ff80ab;
+
+  margin-bottom:70px;
+}
+
+.features-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:30px;
+
+  max-width:1200px;
+
+  margin:auto;
+}
+
+.feature-card{
+
+  background:
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(15px);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  padding:40px;
+
+  border-radius:30px;
+
+  transition:0.4s;
+}
+
+.feature-card:hover{
+
+  transform:translateY(-10px);
+
+  box-shadow:
+  0 0 25px rgba(255,105,180,0.3);
+}
+
+.feature-card h3{
+
+  color:#ff80ab;
+
+  margin-bottom:20px;
+}
+
+.feature-card p{
+
+  line-height:1.8;
+}
+
+/* =========================
+   MEMORY PREVIEW
+========================= */
+
+.memory-preview{
+
+  padding:120px 40px;
+
+  background:#111;
+
+  text-align:center;
+}
+
+.memory-preview h2{
+
+  font-size:4rem;
+
+  color:#ff80ab;
+
+  margin-bottom:70px;
+}
+
+.preview-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:30px;
+
+  max-width:1300px;
+
+  margin:auto;
+}
+
+.preview-card{
+
+  overflow:hidden;
+
+  border-radius:35px;
+}
+
+.preview-card img{
+
+  width:100%;
+
+  height:420px;
+
+  object-fit:cover;
+
+  display:block;
+
+  border-radius:35px;
+
+  transition:0.5s;
+}
+
+.preview-card:hover img{
+
+  transform:scale(1.05);
+}
+
+/* =========================
+   LOVE QUOTE
+========================= */
+
+.love-quote{
+
+  padding:150px 20px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+  ),
+  url('images/homebg.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+}
+
+.love-quote h2{
+
+  font-size:3rem;
+
+  color:#ff80ab;
+
+  line-height:1.8;
+}
+
+/* =========================
+   JOURNEY PAGE
+========================= */
+/* =========================
+   JOURNEY INTRO
+========================= */
+
+.journey-intro {
+
+  width: 100%;
+
+  padding: 100px 20px;
+
+  background: #111;
+
+  text-align: center;
+}
+
+.journey-intro h2 {
+
+  font-size: 3.5rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 25px;
+}
+
+.journey-intro p {
+
+  font-size: 1.3rem;
+
+  line-height: 2;
+
+  max-width: 900px;
+
+  margin: auto;
+
+  color: #f5f5f5;
+}
+.journey-hero{
+
+  min-height:70vh;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.8)
+  ),
+  url('images/homebg.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:140px 20px;
+}
+
+.journey-hero h1{
+
+  font-size:5rem;
+
+  color:#ff80ab;
+
+  margin-bottom:20px;
+}
+
+./* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+
+  position: relative;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 100px 20px;
+
+  background: black;
+}
+
+/* CENTER LINE */
+
+.timeline::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 4px;
+
+  background: #ff80ab;
+
+  top: 0;
+
+  bottom: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+/* ITEM */
+
+.timeline-item {
+
+  position: relative;
+
+  width: 50%;
+
+  padding: 40px;
+}
+
+.left {
+
+  left: 0;
+}
+
+.right {
+
+  left: 50%;
+}
+
+/* CARD */
+
+.timeline-content {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(15px);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  border-radius: 30px;
+
+  padding: 30px;
+
+  transition: 0.4s;
+}
+
+/* IMAGE */
+
+.timeline-content img {
+
+  width: 100%;
+
+  height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  margin: 20px 0;
+}
+
+/* TITLE */
+
+.timeline-content h2 {
+
+  color: #ff80ab;
+
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+
+.timeline-content p {
+
+  line-height: 1.8;
+}
+
+/* DATE */
+
+.date {
+
+  color: #ff80ab;
+
+  font-weight: bold;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .timeline::after {
+
+    left: 20px;
+  }
+
+  .timeline-item {
+
+    width: 100%;
+
+    padding-left: 60px;
+
+    padding-right: 20px;
+  }
+
+  .right {
+
+    left: 0;
+  }
+
+}
+/* =========================
+   FINAL JOURNEY SECTION
+========================= */
+
+.final-journey {
+
+  padding: 140px 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.8)
+    ),
+
+    url('images/homebg.jpg');
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/* TITLE */
+
+.final-journey h2 {
+
+  font-size: 4rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 30px;
+
+  text-shadow:
+    0 0 15px rgba(255,105,180,0.5);
+}
+
+/* TEXT */
+
+.final-journey p {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  font-size: 1.3rem;
+
+  line-height: 2.2;
+
+  color: #f5f5f5;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .final-journey {
+
+    padding: 100px 20px;
+  }
+
+  .final-journey h2 {
+
+    font-size: 2.5rem;
+  }
+
+  .final-journey p {
+
+    font-size: 1rem;
+
+    line-height: 2;
+  }
+
+}
+/* =========================
+   GALLERY PAGE
+========================= */
+
+.gallery-hero{
+
+  min-height:50vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:140px 20px;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.8)
+  ),
+  url('images/homebg.jpg');
+
+  background-size:cover;
+
+  background-position:center;
+}
+
+.gallery-hero h1{
+
+  font-size:4rem;
+
+  color:#ff80ab;
+
+  margin-bottom:20px;
+}
+
+.gallery-container{
+
+  padding:100px 40px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:30px;
+
+  max-width:1400px;
+
+  margin:auto;
+}
+
+.gallery-card{
+
+  overflow:hidden;
+
+  border-radius:30px;
+
+  position:relative;
+}
+
+.gallery-card img{
+
+  width:100%;
+
+  height:400px;
+
+  object-fit:cover;
+
+  transition:0.5s;
+}
+
+.gallery-card:hover img{
+
+  transform:scale(1.08);
+}
+
+/* =========================
+   LETTER PAGE
+========================= */
+
+.letter-section{
+
+  min-height:100vh;
+
+  background:#111;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:120px 20px;
+}
+
+.letter-card{
+
+  max-width:900px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  padding:60px;
+
+  border-radius:40px;
+
+  backdrop-filter:blur(15px);
+}
+
+.letter-card h2{
+
+  color:#ff80ab;
+
+  font-size:3rem;
+
+  margin-bottom:30px;
+
+  text-align:center;
+}
+
+.letter-card p{
+
+  line-height:2.2;
+
+  text-align:center;
+
+  margin-bottom:20px;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.love-popup{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,0.8);
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:center;
+
+  z-index:99999;
+
+  padding:20px;
+}
+
+.love-popup-card{
+
+  max-width:600px;
+
+  width:100%;
+
+  background:
+  rgba(0,0,0,0.6);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:40px;
+
+  padding:50px;
+
+  text-align:center;
+
+  position:relative;
+}
+
+.popup-heart{
+
+  font-size:4rem;
+
+  margin-bottom:20px;
+}
+
+.close-btn{
+
+  position:absolute;
+
+  top:20px;
+
+  right:25px;
+
+  font-size:2rem;
+
+  cursor:pointer;
+
+  color:#ff80ab;
+}
+/* =========================
+   BIRTHDAY PAGE
+========================= */
+
+.birthday-hero {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 140px 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.8)
+    ),
+
+    url('images/homebg.jpg');
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloons span {
+
+  position: absolute;
+
+  bottom: -100px;
+
+  font-size: 3rem;
+
+  animation:
+    floatBalloons 12s linear infinite;
+
+  opacity: 0.8;
+}
+
+.balloons span:nth-child(1){
+
+  left: 10%;
+
+  animation-delay: 0s;
+}
+
+.balloons span:nth-child(2){
+
+  left: 30%;
+
+  animation-delay: 2s;
+}
+
+.balloons span:nth-child(3){
+
+  left: 50%;
+
+  animation-delay: 4s;
+}
+
+.balloons span:nth-child(4){
+
+  left: 70%;
+
+  animation-delay: 6s;
+}
+
+.balloons span:nth-child(5){
+
+  left: 90%;
+
+  animation-delay: 8s;
+}
+
+@keyframes floatBalloons {
+
+  0% {
+
+    transform:
+      translateY(0);
+
+    opacity: 0;
+  }
+
+  50% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      translateY(-120vh);
+
+    opacity: 0;
+  }
+
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.birthday-content {
+
+  position: relative;
+
+  z-index: 10;
+
+  max-width: 900px;
+
+  background:
+    rgba(0,0,0,0.45);
+
+  backdrop-filter: blur(15px);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  border-radius: 40px;
+
+  padding: 70px 50px;
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+
+.birthday-content h1 {
+
+  font-size: 5rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 30px;
+
+  line-height: 1.2;
+
+  text-shadow:
+    0 0 15px rgba(255,105,180,0.5);
+}
+
+/* TEXT */
+
+.birthday-text {
+
+  font-size: 1.3rem;
+
+  line-height: 2.2;
+
+  color: #f5f5f5;
+
+  margin-bottom: 40px;
+}
+
+/* SUBTITLE */
+
+.birthday-content h2 {
+
+  font-size: 2.5rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 40px;
+}
+
+/* BUTTON */
+
+.birthday-content button {
+
+  padding: 18px 40px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background: #ff4f81;
+
+  color: white;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.birthday-content button:hover {
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 25px rgba(255,105,180,0.6);
+}
+
+/* =========================
+   BIRTHDAY MESSAGE
+========================= */
+
+.birthday-message {
+
+  padding: 140px 20px;
+
+  text-align: center;
+
+  background: #111;
+}
+
+.birthday-message h2 {
+
+  font-size: 4rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 40px;
+}
+
+.birthday-message p {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  font-size: 1.3rem;
+
+  line-height: 2.3;
+
+  color: #f5f5f5;
+}
+
+/* =========================
+   WISHES SECTION
+========================= */
+
+.birthday-wishes {
+
+  padding: 140px 20px;
+
+  background: black;
+
+  text-align: center;
+}
+
+.birthday-wishes h2 {
+
+  font-size: 4rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 70px;
+}
+
+/* GRID */
+
+.wish-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 30px;
+
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+/* CARD */
+
+.wish-card {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(15px);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  transition: 0.4s;
+}
+
+.wish-card:hover {
+
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+    0 0 25px rgba(255,105,180,0.4);
+}
+
+/* CARD TITLE */
+
+.wish-card h3 {
+
+  font-size: 2rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 20px;
+}
+
+/* CARD TEXT */
+
+.wish-card p {
+
+  line-height: 2;
+
+  color: #f5f5f5;
+}
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.final-birthday {
+
+  padding: 160px 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.7),
+      rgba(0,0,0,0.8)
+    ),
+
+    url('images/homebg.jpg');
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+.final-birthday h2 {
+
+  font-size: 4rem;
+
+  color: #ff80ab;
+
+  margin-bottom: 40px;
+
+  text-shadow:
+    0 0 15px rgba(255,105,180,0.5);
+}
+
+.final-birthday p {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  font-size: 1.3rem;
+
+  line-height: 2.3;
+
+  color: #f5f5f5;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .birthday-content {
+
+    padding: 40px 25px;
+  }
+
+  .birthday-content h1 {
+
+    font-size: 2.8rem;
+  }
+
+  .birthday-content h2 {
+
+    font-size: 2rem;
+  }
+
+  .birthday-text {
+
+    font-size: 1rem;
+  }
+
+  .birthday-message h2,
+  .birthday-wishes h2,
+  .final-birthday h2 {
+
+    font-size: 2.3rem;
+  }
+
+  .birthday-message p,
+  .final-birthday p {
+
+    font-size: 1rem;
+
+    line-height: 2;
+  }
+
+  .wish-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .navbar{
+
+    padding:20px;
+  }
+
+  .navbar ul{
+
+    gap:15px;
+
+    flex-wrap:wrap;
+  }
+
+  .hero-title,
+  .journey-hero h1,
+  .gallery-hero h1{
+
+    font-size:2.5rem;
+  }
+
+  .glass-card,
+  .letter-card{
+
+    padding:40px 25px;
+  }
+
+  .timeline::after{
+
+    left:20px;
+  }
+
+  .timeline-item{
+
+    width:100%;
+
+    padding-left:60px;
+
+    padding-right:20px;
+  }
+
+  .right{
+    left:0;
+  }
+
+  .preview-grid,
+  .features-grid,
+  .gallery-container{
+
+    grid-template-columns:1fr;
+  }
+
+  .preview-card img,
+  .gallery-card img{
+
+    height:320px;
+  }
+
+  .memory-preview h2,
+  .love-quote h2,
+  .gallery-hero h1{
+
+    font-size:2.3rem;
+  }
+}
